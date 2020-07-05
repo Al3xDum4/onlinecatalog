@@ -62,7 +62,8 @@
      var serializedData = form.serialize();
 
      var request = $.ajax({
-        url: "http://localhost:8080/adddiscipline",
+        //url: "http://localhost:8080/adddiscipline",
+        url: "https://online-school-catalog-ad.herokuapp.com/adddiscipline",
         type: "post",
         data: serializedData
      })
