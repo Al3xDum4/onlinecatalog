@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Students view</title>
+
+    <nav th:insert="menu.html::menu_nav"></nav>
+</head>
+<body>
+<div class="container">
+    <h1>Students</h1>
+    <hr>
+    <a th:href="@{/addstudent}">
+        <i class="small material-icons">add</i>
+    </a>
+    <p th:text="${message}" class="message-view"></p>
+</div>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <td class="thead-text">
+                Student id
+            </td>
+            <td class="thead-text">
+                Student first name
+            </td>
+            <td class="thead-text">
+                Student last name
+            </td>
+            <td class="thead-text">Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s: ${students}">
+            <td th:text="${s.studentId}"></td>
+            <td th:text="${s.firstName}"></td>
+            <td th:text="${s.lastName}"></td>
+            <td>
+                <a th:href="@{/editstudent/{id} (id=${s.studentId})}">
+                    <i class="small material-icons">create</i>
+                </a>
+                <a th:href="@{/deletestudent/{id} (id=${s.studentId})}">
+                    <i class="small material-icons">delete</i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="preload stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.js" defer></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <title>Add professor</title>
+    <nav th:insert="menu.html::menu_nav"></nav>
+</head>
+<body>
+<div class="row">
+    <form class="col s12" th:action="@{/addprofessor}" th:object="${professor}" method="post" id="submit-create-form">
+        <div class="container">
+            <h1>Add professor</h1>
+            <p>Please fill in this form to create a student.</p>
+            <hr>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="first_name"><b>First Name</b></label>
+                    <input th:field="*{firstName}" id="first_name" type="text" placeholder="First Name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="last_name"><b>Last Name</b></label>
+                    <input th:field="*{lastName}" id="last_name" type="text" placeholder="Last Name" required>
+                </div>
+            </div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+<script>
+    $("#submit-create-form").on("submit",function(e){
+       e.preventDefault(); //clear form...something like that...
+
+     var form = $(this);
+     var serializedData = form.serialize();
+
+     var request = $.ajax({
+        url: "http://localhost:8080/addprofessor",
+        type: "post",
+        data: serializedData
+     })
+
+     request.done(() => {
+        Swal.fire({
+            title: "Success",
+            text: "Professor name created successfully!",
+            type: "success",
+            showConfirmButton: false,
+            timer: 1500
+        }).then(() => {
+            window.location.href = "http://localhost:8080/allprofessors";
+        }).catch((error) => {
+            console.log(error);
+        });
+     });
+    });
+</script>

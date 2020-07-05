@@ -1,0 +1,118 @@
+.container {
+    width: 95% !important;
+}
+
+.nav-cont {
+    background-color: #546e7a !important;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 999 !important;
+}
+
+.message-view {
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+
+.row {
+    padding-top: 80px !important;
+}
+
+.menu-item {
+    color: white;
+}
+
+.datepicker-date-display {
+    background-color: #546e7a !important;
+}
+
+.thead-text {
+    font-weight: bold;
+    color: #666666;
+}
+
+.card-look {
+    background-color: #e4e4e4;
+    transition: all .3s ease;
+}
+
+.card-look:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 3px 4px 0px rgba(204,112,0,0.90);
+}
+
+.card-look .card-title {
+    font-weight: bold;
+    text-align: center;
+    color: #666666;
+}
+
+.card-look .card-action a {
+    color: #666666 !important;
+    position: relative;
+    width: auto;
+    text-decoration: none;
+    text-transform: capitalize !important;
+}
+
+.card-look .card-action a:hover {
+    color: orange !important;
+    text-decoration: none;
+}
+
+.card-look .card-action a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all .6s ease-in-out 0s;
+}
+
+.card-look .card-action a:hover:before {
+    color: orange;
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.iconlinkcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.iconlinkcontainer i {
+    color: #666666;
+    margin-right: 5px;
+}
+
+.nav-wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.nav-wrapper span {
+    margin-left: 10%;
+    font-size: 20px;
+    color: #CACACA;
+}
+
+.brand-logo {
+    height: 100%;
+    padding: 5px !important;
+}
+
+.brand-logo img {
+    width: 15%;
+    height: 100%;
+    border-radius: 3px;
+}
+

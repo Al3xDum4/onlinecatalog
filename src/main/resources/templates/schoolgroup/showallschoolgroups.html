@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <script type="text/javascript"
+            src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <meta charset="UTF-8">
+    <title>SchoolGroup view</title>
+    <nav th:insert="menu.html::menu_nav"></nav>
+<!--    <script>-->
+<!--        $("#group-year").on("submit",function(e){-->
+<!--            Date.prototype.myMet = function() {-->
+<!--    	        var d = new Date();-->
+<!--                var m = d.getMonth();-->
+<!--                if (this.getMonth() < 8){-->
+<!--      	            this.myProp = "promotia " + (d.getFullYear()-1) + " - " + d.getFullYear()-->
+<!--                } else if (this.getMonth() >= 8){-->
+<!--      	            this.myProp = "promotia " + d.getFullYear() + " - " + (d.getFullYear()+1)-->
+<!--                };-->
+<!--            };-->
+<!--            function myFunction() {-->
+<!--            var d = new Date();-->
+<!--            d.myMet();-->
+<!--            document.getElementById("group-year").innerHTML = d.myProp;-->
+<!--            }-->
+<!--            };-->
+<!--        };-->
+<!--    </script>-->
+</head>
+<body>
+<div class="container">
+    <h1>School Group</h1>
+    <hr>
+    <a th:href="@{/addschoolgroup}">
+        <i class="small material-icons">add</i>
+    </a>
+</div>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <td class="thead-text">
+                School Group id
+            </td>
+            <td class="thead-text">
+                School Group Name
+            </td>
+            <td class="thead-text">
+                School Group Year
+            </td>
+            <td class="thead-text">Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sc: ${schoolgroups}">
+            <td th:text="${sc.groupId}"></td>
+            <td th:text="${sc.groupName}"></td>
+            <td th:text="${sc.groupYear}"></td>
+            <td>
+                <a th:href="@{/editschoolgroup/{id} (id=${sc.groupId})}">
+                    <i class="small material-icons">create</i>
+                </a>
+                <a th:href="@{/deleteschoolgroup/{id} (id=${sc.groupId})}">
+                    <i class="small material-icons">delete</i>
+                </a>
+                <a th:href="@{/group/{id}/students(id = ${sc.groupId})}">
+                    <i class="small material-icons">center_focus_strong</i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
