@@ -4,6 +4,7 @@ import com.Alex.onlinecatalog.model.Discipline;
 import com.Alex.onlinecatalog.model.SchoolGroup;
 import com.Alex.onlinecatalog.model.Student;
 import com.Alex.onlinecatalog.repository.*;
+import com.Alex.onlinecatalog.service.SendGridEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -28,13 +29,15 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     private ProfessorRepository professorRepository;
     @Autowired
     private SchoolGroupRepository schoolGroupRepository;
+    @Autowired
+    private SendGridEmailService sendGridEmailService;
 
-    public static void main(String[] args) {
-        SpringApplication.run(OnlinecatalogApplication.class, args);
+    public static void main(String[] args) { SpringApplication.run(OnlinecatalogApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
+        sendGridEmailService.sendHTML("alex.m.duma@gmail.com","alex.m.duma@gmail.com","Hello from the other side!","Hello!");
 //        Student student = new Student();
 //        student.setFirstName("John");
 //        student.setLastName("Doe");
