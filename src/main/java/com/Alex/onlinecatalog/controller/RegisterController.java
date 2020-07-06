@@ -54,8 +54,8 @@ public class RegisterController {
         PendingUser pendingUser = new PendingUser();
         String activationCode = randomStringGenerator.getAlphaNumericString(20);
         pendingUser.setActivationCode(activationCode);
-        sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com", user.getEmailAddress(), "Please confirm account",
-                randomStringGenerator.linkCreator(activationCode, "https://online-school-catalog-ad.herokuapp.com/"));
+        sendGridEmailService.sendHTML("alex.m.duma@gmail.com", user.getEmailAddress(), "Please confirm account",
+                randomStringGenerator.linkCreator(activationCode, "https://online-school-catalog-ad.herokuapp.com"));
         pendingUser.setUser(user);
         pendingUserRepository.save(pendingUser);
 
@@ -63,9 +63,11 @@ public class RegisterController {
     }
     @GetMapping("/userValidation")
     public String validateUser(String activationCode) {
+        System.out.println(activationCode);
         Optional<PendingUser> optionalPendingUser = pendingUserRepository.findByActivationCode(activationCode);
         if(optionalPendingUser.isPresent()){
             PendingUser pendingUser = optionalPendingUser.get();
+            System.out.println(pendingUser.getActivationCode());
             //userRepository.save(pendingUser.getUser());
             pendingUserRepository.delete(pendingUser);
         }

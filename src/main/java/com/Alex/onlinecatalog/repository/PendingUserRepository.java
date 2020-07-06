@@ -12,4 +12,7 @@ public interface PendingUserRepository extends JpaRepository<PendingUser, Intege
 
     @Query("FROM PendingUser p where p.user.username = :username")
     Optional<PendingUser> findByUsername(@Param("username") String username);
+
+    @Query("FROM PendingUser p where p.user.email_address = :email")
+    Optional<PendingUser> findByEmailAddress(@Param("emailAddress") String email);
 }
