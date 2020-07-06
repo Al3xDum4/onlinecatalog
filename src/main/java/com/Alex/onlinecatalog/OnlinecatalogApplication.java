@@ -43,7 +43,12 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         try {
-            pendingUserRepository.deleteById(5);
+            userRepository.deleteById(2);
+            userRepository.deleteById(3);
+            userRepository.deleteById(4);
+            userRepository.deleteById(5);
+            userRepository.deleteById(6);
+            userRepository.deleteById(7);
         }
         catch (Exception ex) {
 
