@@ -40,12 +40,12 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        try {
-            userRepository.deleteById(1);
-        }
-        catch (Exception ex) {
-
-        }
+//        try {
+//            userRepository.deleteById(1);
+//        }
+//        catch (Exception ex) {
+//
+//        }
         //sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com","buhaidebalta.15@gmail.com","Hello from the other side!","Hello!");
 //        Student student = new Student();
 //        student.setFirstName("John");
