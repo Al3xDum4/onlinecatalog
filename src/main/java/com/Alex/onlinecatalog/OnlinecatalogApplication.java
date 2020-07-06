@@ -31,12 +31,21 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     private SchoolGroupRepository schoolGroupRepository;
     @Autowired
     private SendGridEmailService sendGridEmailService;
+    @Autowired
+    private UserRepository userRepository;
 
     public static void main(String[] args) { SpringApplication.run(OnlinecatalogApplication.class, args);
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        try {
+            userRepository.deleteById(1);
+        }
+        catch (Exception ex) {
+
+        }
         //sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com","buhaidebalta.15@gmail.com","Hello from the other side!","Hello!");
 //        Student student = new Student();
 //        student.setFirstName("John");
