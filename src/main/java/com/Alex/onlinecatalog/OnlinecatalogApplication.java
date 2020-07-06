@@ -33,6 +33,8 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     private SendGridEmailService sendGridEmailService;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PendingUserRepository pendingUserRepository;
 
     public static void main(String[] args) { SpringApplication.run(OnlinecatalogApplication.class, args);
     }
@@ -40,12 +42,15 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        try {
-//            userRepository.deleteById(1);
-//        }
-//        catch (Exception ex) {
-//
-//        }
+        try {
+            pendingUserRepository.deleteById(1);
+            pendingUserRepository.deleteById(2);
+            pendingUserRepository.deleteById(3);
+            pendingUserRepository.deleteById(4);
+        }
+        catch (Exception ex) {
+
+        }
         //sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com","buhaidebalta.15@gmail.com","Hello from the other side!","Hello!");
 //        Student student = new Student();
 //        student.setFirstName("John");
