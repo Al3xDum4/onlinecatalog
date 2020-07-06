@@ -10,6 +10,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface SchoolGroupRepository extends JpaRepository<SchoolGroup, Integer> {
-    @Query("FROM SchoolGroup s where s.group_id = :professor")
-    Optional<SchoolGroup> findByUsername(@Param("username") String username);
+
 }
