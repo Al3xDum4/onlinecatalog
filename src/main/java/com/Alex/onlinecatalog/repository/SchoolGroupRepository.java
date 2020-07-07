@@ -10,5 +10,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.Optional;
 
 public interface SchoolGroupRepository extends JpaRepository<SchoolGroup, Integer> {
-
+//    @Query("FROM SchoolGroup s where s.discipline.id = :firstName")
+//    Optional<SchoolGroup> findAllBy(@Param("username") String username);
 }

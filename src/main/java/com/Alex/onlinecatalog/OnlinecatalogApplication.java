@@ -15,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //TODO: !!!only display year in school group , not the entire date. Only select year in date picker (edited)!!!
 //TODO: fix problem in nav between <img> and <span>
 //TODO: to be sure that username is unique
+//TODO: modify relation between discipline and schoolGroup. It must to be ManyToMany
 
 @SpringBootApplication
 public class OnlinecatalogApplication implements CommandLineRunner {
@@ -42,17 +43,17 @@ public class OnlinecatalogApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        try {
-            userRepository.deleteById(2);
-            userRepository.deleteById(3);
-            userRepository.deleteById(4);
-            userRepository.deleteById(5);
-            userRepository.deleteById(6);
-            userRepository.deleteById(7);
-        }
-        catch (Exception ex) {
-
-        }
+//        try {
+//            userRepository.deleteById(2);
+//            userRepository.deleteById(3);
+//            userRepository.deleteById(4);
+//            userRepository.deleteById(5);
+//            userRepository.deleteById(6);
+//            userRepository.deleteById(7);
+//        }
+//        catch (Exception ex) {
+//
+//        }
         //sendGridEmailService.sendHTML("buhaidebalta.15@gmail.com","buhaidebalta.15@gmail.com","Hello from the other side!","Hello!");
 //        Student student = new Student();
 //        student.setFirstName("John");
