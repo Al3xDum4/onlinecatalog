@@ -21,6 +21,6 @@ public class Discipline {
     @ManyToMany(mappedBy = "disciplines")
     private List<Student> students;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private SchoolGroup schoolGroup;
+    @ManyToMany(mappedBy = "disciplines")
+    private List<SchoolGroup> schoolGroups;
 }

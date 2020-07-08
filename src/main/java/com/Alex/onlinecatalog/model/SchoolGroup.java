@@ -24,6 +24,8 @@ public class SchoolGroup {
     @OneToMany(mappedBy = "schoolGroup", cascade = CascadeType.ALL)
     private List<Student> students;
 
-    @OneToMany(mappedBy = "schoolGroup", cascade = CascadeType.ALL)
+    @ManyToMany
+    @JoinTable(name = "group_discipline", joinColumns = @JoinColumn(name = "group_id"),
+            inverseJoinColumns = @JoinColumn(name = "discipline_id"))
     private List<Discipline> disciplines;
 }
