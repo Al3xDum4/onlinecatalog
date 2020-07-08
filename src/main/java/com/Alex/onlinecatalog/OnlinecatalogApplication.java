@@ -42,6 +42,12 @@ public class OnlinecatalogApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        try {
+            pendingUserRepository.deleteById(1);
+        }
+        catch (Exception ex){
+
+        }
 
 //        try {
 //            userRepository.deleteById(2);
