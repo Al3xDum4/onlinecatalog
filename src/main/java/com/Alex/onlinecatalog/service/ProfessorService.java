@@ -34,4 +34,8 @@ public class ProfessorService {
     public void deleteById(Integer id) {
         professorRepository.deleteById(id);
     }
+
+//    public List<Professor> findAllProfessorsById{
+////        return professorRepository.findAllProfesso
+////    }
 }

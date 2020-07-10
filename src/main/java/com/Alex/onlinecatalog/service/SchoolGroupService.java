@@ -39,7 +39,6 @@ public class SchoolGroupService {
     }
 
     public List<Student> findStudentsByGroup(Integer id) {
-        //TODO: try catch / check if present
         return schoolGroupRepository.findById(id).get().getStudents();
     }
 
@@ -47,7 +46,7 @@ public class SchoolGroupService {
         return schoolGroupRepository.findById(id).get().getDisciplines();
     }
 
-//    public List<Professor> findProfessorsByGroup(Integer id) {
-//        return schoolGroupRepository.findById(id).g
+//    public List<Professor> findAllProfessorsByGroup(Integer id) {
+//        return schoolGroupRepository.findById(id).get().getDisciplines();
 //    }
 }
