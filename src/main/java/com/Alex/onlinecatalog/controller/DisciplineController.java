@@ -32,13 +32,13 @@ public class DisciplineController {
     @GetMapping("/adddiscipline")
     public String addDiscipline(Model model) {
         model.addAttribute("schoolgroups", schoolGroupService.findAll());
-        model.addAttribute("discipline", new Discipline()); // initial bind with the form, to say to the webpage what is the type of student th:object
+        System.out.println(schoolGroupService.findAll());
+        //model.addAttribute("discipline", new Discipline()); // initial bind with the form, to say to the webpage what is the type of student th:object
         return "discipline/adddiscipline";
     }
 
     @PostMapping("/adddiscipline")
     public String addDiscipline(@ModelAttribute Discipline discipline) {
-//        System.out.println(student);
         disciplineService.save(discipline);
         return "redirect:/alldisciplines";
     }
