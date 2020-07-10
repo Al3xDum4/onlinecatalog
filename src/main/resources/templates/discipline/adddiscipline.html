@@ -48,15 +48,15 @@
 <!--                </div>-->
 <!--            </div>-->
 
-<!--            <div class="row">-->
-<!--                <div class="input-field col s12">-->
-<!--                    <select multiple id="school_group" th:field="*{schoolGroup.groupId}">-->
-<!--                        <option th:each="sc: ${schoolgroups}" th:value="${sc.groupId}"&ndash;&gt;-->
-<!--                                th:text="${sc.groupName + ' ' + sc.groupYear}"></option>-->
-<!--                    </select>-->
-<!--                    <label for="school_group"><b>School group</b></label>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select multiple id="school_group" th:field="*{schoolGroup.groupId}">
+                        <option th:each="sc: ${schoolgroups}" th:value="${sc.groupId}"-->
+                                th:text="${sc.groupName + ' ' + sc.groupYear}"></option>
+                    </select>
+                    <label for="school_group"><b>School group</b></label>
+                </div>
+            </div>
 
             <button type="submit">Add</button>
         </div>
