@@ -36,12 +36,12 @@ public class DisciplineController {
         return "discipline/adddiscipline";
     }
 
-    @PostMapping("/adddiscipline")
-    public String addDiscipline(@ModelAttribute Discipline discipline) {
-//        System.out.println(student);
-        disciplineService.save(discipline);
-        return "redirect:/alldisciplines";
-    }
+//    @PostMapping("/adddiscipline")
+//    public String addDiscipline(@ModelAttribute Discipline discipline) {
+////        System.out.println(student);
+//        disciplineService.save(discipline);
+//        return "redirect:/alldisciplines";
+//    }
 
     @GetMapping("/editdiscipline/{id}")
     public String editDiscipline(Model model, @PathVariable String id) {
