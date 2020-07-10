@@ -33,7 +33,7 @@ public class DisciplineController {
     public String addDiscipline(Model model) {
         model.addAttribute("schoolgroups", schoolGroupService.findAll());
         System.out.println(schoolGroupService.findAll());
-        //model.addAttribute("discipline", new Discipline()); // initial bind with the form, to say to the webpage what is the type of student th:object
+        model.addAttribute("discipline", new Discipline()); // initial bind with the form, to say to the webpage what is the type of student th:object
         return "discipline/adddiscipline";
     }
 
