@@ -37,7 +37,7 @@ public class DisciplineController {
     }
 
     @PostMapping("/adddiscipline")
-    public String addDiscipline(@ModelAttribute Discipline discipline, SchoolGroup schoolGroup, @PathVariable String id) {
+    public String addDiscipline(@ModelAttribute Discipline discipline) {
 //        System.out.println(student);
         disciplineService.save(discipline);
         return "redirect:/alldisciplines";

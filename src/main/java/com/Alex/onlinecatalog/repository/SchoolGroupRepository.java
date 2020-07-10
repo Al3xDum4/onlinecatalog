@@ -12,6 +12,9 @@ import java.util.Optional;
 public interface SchoolGroupRepository extends JpaRepository<SchoolGroup, Integer> {
 //    @Query("FROM SchoolGroup s where s.discipline.id = :firstName")
 //    Optional<SchoolGroup> findAllBy(@Param("username") String username);
+
 //    @Query("FROM SchoolGroup s where s.professor.id = :professorId")
-////    Optional<SchoolGroup> findAllProfessorsByGroup(@Param("professorId") Integer professorId);
+//    Optional<SchoolGroup> findAllProfessorsByGroup(@Param("professorId") Integer professorId);
+
+
 }
