@@ -116,3 +116,8 @@
     border-radius: 3px;
 }
 
+.button-collapse {
+    position: absolute;
+    right: 0;
+}
+
