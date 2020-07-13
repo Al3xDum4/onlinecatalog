@@ -16,7 +16,7 @@
                  alt="image-catalog"></a>
         </a>
         <span>Online School Catalog</span>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a th:href="@{/homeallschoolgroups}" class="menu-item">Home</a></li>
             <li><a th:href="@{/allstudents}" class="menu-item">Students</a></li>
@@ -38,9 +38,7 @@
 </nav>
 
 <script>
-    $(document).ready(function(){
-    $('.sidenav').sidenav();
-    });
+    $(".button-collapse").sideNav();
 </script>
 </body>
 </html>
