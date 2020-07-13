@@ -5,6 +5,7 @@
             <img src="https://storage0.dms.mpinteractiv.ro/media/1/1481/25326/19086986/2/7421694-mediafax-foto-andreea-alexandru.jpg?width=600" alt="image-catalog"></a>
         </a>
         <span>Online School Catalog</span>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a th:href="@{/homeallschoolgroups}" class="menu-item">Home</a></li>
             <li><a th:href="@{/allstudents}" class="menu-item">Students</a></li>
@@ -15,3 +16,12 @@
         </ul>
     </div>
 </nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a th:href="@{/homeallschoolgroups}" class="menu-item">Home</a></li>
+    <li><a th:href="@{/allstudents}" class="menu-item">Students</a></li>
+    <li><a th:href="@{/allprofessors}" class="menu-item">Professors</a></li>
+    <li><a th:href="@{/allschoolgroups}" class="menu-item">School Groups</a></li>
+    <li><a th:href="@{/alldisciplines}" class="menu-item">Disciplines</a></li>
+    <li><a th:href="@{/logout}" class="grey-text text-#CACACA right" id="logout">Logout</a></li>
+</ul>
