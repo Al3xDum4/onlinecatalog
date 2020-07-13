@@ -1,5 +1,8 @@
 <html th:fragment="menu_nav" lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
-
+<head>
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
 <nav class="nav-cont">
     <div class="nav-wrapper">
         <a href="https://storage0.dms.mpinteractiv.ro/media/1/1481/25326/19086986/2/7421694-mediafax-foto-andreea-alexandru.jpg?width=600"
@@ -17,15 +20,21 @@
             <li><a th:href="@{/alldisciplines}" class="menu-item">Disciplines</a></li>
             <li><a th:href="@{/logout}" class="grey-text text-#CACACA right" id="logout">Logout</a></li>
         </ul>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a th:href="@{/homeallschoolgroups}" class="menu-item">Home</a></li>
+            <li><a th:href="@{/allstudents}" class="menu-item">Students</a></li>
+            <li><a th:href="@{/allprofessors}" class="menu-item">Professors</a></li>
+            <li><a th:href="@{/allschoolgroups}" class="menu-item">School Groups</a></li>
+            <li><a th:href="@{/alldisciplines}" class="menu-item">Disciplines</a></li>
+            <li><a th:href="@{/logout}" class="grey-text text-#CACACA right" id="logout-collapse">Logout</a></li>
+        </ul>
     </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
-    <li><a th:href="@{/homeallschoolgroups}" class="menu-item">Home</a></li>
-    <li><a th:href="@{/allstudents}" class="menu-item">Students</a></li>
-    <li><a th:href="@{/allprofessors}" class="menu-item">Professors</a></li>
-    <li><a th:href="@{/allschoolgroups}" class="menu-item">School Groups</a></li>
-    <li><a th:href="@{/alldisciplines}" class="menu-item">Disciplines</a></li>
-    <li><a th:href="@{/logout}" class="grey-text text-#CACACA right" id="logout-collapse">Logout</a></li>
-</ul>
+<script>
+    $(".button-collapse").sideNav();
+</script>
+
+</body>
 </html>
