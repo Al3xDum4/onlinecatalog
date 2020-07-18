@@ -39,6 +39,7 @@ public class DisciplineController {
 
     @PostMapping("/adddiscipline")
     public String addDiscipline(@ModelAttribute Discipline discipline) {
+        discipline.setSchoolGroups(discipline.getSchoolGroups());
         disciplineService.save(discipline);
         return "redirect:/alldisciplines";
     }
