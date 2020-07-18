@@ -16,24 +16,34 @@ public class StudentRestController {
     private StudentRepository studentRepository;
 
     @GetMapping("/students")
-    public ResponseEntity<List<Student>> getAllStudents(){
+    public ResponseEntity<List<Student>> getAllStudents() {
         return ResponseEntity.ok(studentRepository.findAll());
     }
 
     @GetMapping("/students/{id}")
-    public ResponseEntity<Student> getStudent(@PathVariable Integer id){
+    public ResponseEntity<Student> getStudent(@PathVariable Integer id) {
         return ResponseEntity.of(studentRepository.findById(id));
     }
 
     @PostMapping("/student/create")
-    public ResponseEntity<Student> createStudent(@RequestBody Student student){
+    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
         studentRepository.save(student);
         return ResponseEntity.ok(student);
     }
 
     @PatchMapping("/student/edit")
-    public ResponseEntity<Student> editStudent(@RequestBody Student student){
+    public ResponseEntity<Student> editStudent(@RequestBody Student student) {
         studentRepository.save(student);
         return ResponseEntity.ok(student);
+    }
+
+    @DeleteMapping("/student/delete/{id}")
+    public ResponseEntity<Student> deleteStudent(@PathVariable Integer id) {
+        try {
+            studentRepository.deleteById(id);
+            return ResponseEntity.ok().build();
+        } catch (Exception ex) {
+            return ResponseEntity.notFound().build();
+        }
     }
 }
