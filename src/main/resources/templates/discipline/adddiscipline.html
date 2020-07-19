@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="UTF-8">
     <title>Add discipline</title>
-    <nav th:block="menu.html::menu_nav"></nav>
+    <th:block th:insert="menu.html::menu_nav"></th:block>
     <script>
         $(document).ready(function() {
             $('select').material_select();
