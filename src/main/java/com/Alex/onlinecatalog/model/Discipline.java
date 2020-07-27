@@ -1,5 +1,6 @@
 package com.Alex.onlinecatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,11 +17,14 @@ public class Discipline {
     private String disciplineName;
 
     @OneToMany(mappedBy = "discipline", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Professor> professors;
 
     @ManyToMany(mappedBy = "disciplines")
+    @JsonIgnore
     private List<Student> students;
 
     @ManyToMany(mappedBy = "disciplines")
+    @JsonIgnore
     private List<SchoolGroup> schoolGroups;
 }

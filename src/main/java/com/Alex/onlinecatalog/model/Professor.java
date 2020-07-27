@@ -1,5 +1,6 @@
 package com.Alex.onlinecatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,5 +19,6 @@ public class Professor {
     private int professorId;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Discipline discipline;
 }

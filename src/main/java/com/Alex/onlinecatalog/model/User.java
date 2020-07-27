@@ -1,5 +1,6 @@
 package com.Alex.onlinecatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class User {
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
     private Role role;
 
     @OneToOne(mappedBy = "user")

@@ -1,5 +1,6 @@
 package com.Alex.onlinecatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +34,7 @@ public class SchoolGroup {
     * in cazul de fata aplicabil pe toate operatile de persistenta asupra entitatii
     */
     @OneToMany(mappedBy = "schoolGroup", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Student> students;
 
     /*
@@ -41,6 +43,7 @@ public class SchoolGroup {
     * iar coloana inversa este discipline_id
     */
     @ManyToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
     @JoinTable(name = "group_discipline", joinColumns = @JoinColumn(name = "group_id"),
             inverseJoinColumns = @JoinColumn(name = "discipline_id"))
     private List<Discipline> disciplines;

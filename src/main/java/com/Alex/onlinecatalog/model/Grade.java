@@ -1,5 +1,6 @@
 package com.Alex.onlinecatalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,6 +22,7 @@ public class Grade {
     private int gradeId;
 
     @ManyToMany(mappedBy = "grades")
+    @JsonIgnore
     private List<Student> students;
 
 }
