@@ -38,8 +38,8 @@ public class DisciplineController {
     }
 
     @PostMapping("/adddiscipline")
-    public String addDiscipline(@ModelAttribute Discipline discipline, SchoolGroup schoolGroup) {
-        discipline.setSchoolGroups(discipline.getSchoolGroups());
+    public String addDiscipline(@ModelAttribute Discipline discipline, List<SchoolGroup> schoolGroups) {
+        discipline.setSchoolGroups(schoolGroups);
         disciplineService.save(discipline);
         return "redirect:/alldisciplines";
     }
