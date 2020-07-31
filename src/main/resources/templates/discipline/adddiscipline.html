@@ -67,32 +67,32 @@
 </body>
 </html>
 
-<script>
-    $("#submit-create-form").on("submit",function(e){
-       e.preventDefault(); //clear form...something like that...
+<!--<script>-->
+<!--    $("#submit-create-form").on("submit",function(e){-->
+<!--       e.preventDefault(); //clear form...something like that...-->
 
-     var form = $(this);
-     var serializedData = form.serialize();
+<!--     var form = $(this);-->
+<!--     var serializedData = form.serialize();-->
 
-     var request = $.ajax({
-        //url: "http://localhost:8080/adddiscipline",
-        url: "https://online-school-catalog-ad.herokuapp.com/adddiscipline",
-        type: "post",
-        data: serializedData
-     })
+<!--     var request = $.ajax({-->
+<!--        //url: "http://localhost:8080/adddiscipline",-->
+<!--        url: "https://online-school-catalog-ad.herokuapp.com/adddiscipline",-->
+<!--        type: "post",-->
+<!--        data: serializedData-->
+<!--     })-->
 
-     request.done(() => {
-        Swal.fire({
-            title: "Success",
-            text: "Discipline name created successfully!",
-            type: "success",
-            showConfirmButton: false,
-            timer: 1500
-        }).then(() => {
-            window.location.href = "https://online-school-catalog-ad.herokuapp.com/alldisciplines";
-        }).catch((error) => {
-            console.log(error);
-        });
-     });
-    });
-</script>
+<!--     request.done(() => {-->
+<!--        Swal.fire({-->
+<!--            title: "Success",-->
+<!--            text: "Discipline name created successfully!",-->
+<!--            type: "success",-->
+<!--            showConfirmButton: false,-->
+<!--            timer: 1500-->
+<!--        }).then(() => {-->
+<!--            window.location.href = "https://online-school-catalog-ad.herokuapp.com/alldisciplines";-->
+<!--        }).catch((error) => {-->
+<!--            console.log(error);-->
+<!--        });-->
+<!--     });-->
+<!--    });-->
+<!--</script>-->
