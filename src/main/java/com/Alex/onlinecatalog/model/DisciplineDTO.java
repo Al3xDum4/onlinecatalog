@@ -11,20 +11,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
-public class Discipline {
-    @Id
+public class DisciplineDTO {
+
     private String disciplineName;
 
-    @OneToMany(mappedBy = "discipline", cascade = CascadeType.ALL)
-    @JsonIgnore
+
     private List<Professor> professors;
 
-    @ManyToMany(mappedBy = "disciplines")
-    @JsonIgnore
+
     private List<Student> students;
 
-    @ManyToMany(mappedBy = "disciplines")
-    @JsonIgnore
-    private List<SchoolGroup> schoolGroups;
+
+    private SchoolGroup[] schoolGroups;
 }

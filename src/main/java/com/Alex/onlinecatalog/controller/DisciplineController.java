@@ -1,6 +1,7 @@
 package com.Alex.onlinecatalog.controller;
 
 import com.Alex.onlinecatalog.model.Discipline;
+import com.Alex.onlinecatalog.model.DisciplineDTO;
 import com.Alex.onlinecatalog.model.SchoolGroup;
 import com.Alex.onlinecatalog.service.DisciplineService;
 import com.Alex.onlinecatalog.service.SchoolGroupService;
@@ -30,15 +31,16 @@ public class DisciplineController {
     public String addDiscipline(Model model) {
         model.addAttribute("schoolgroups", schoolGroupService.findAll());
         //System.out.println(schoolGroupService.findAll());
-        model.addAttribute("discipline", new Discipline()); // initial bind with the form, to say to the webpage what is the type of student th:object
+        model.addAttribute("discipline", new DisciplineDTO()); // initial bind with the form, to say to the webpage what is the type of student th:object
         return "discipline/adddiscipline";
     }
 
     @PostMapping("/adddiscipline")
-    public String addDiscipline(@ModelAttribute Discipline discipline, SchoolGroup schoolGroup) {
+    public String addDiscipline(@ModelAttribute DisciplineDTO discipline, SchoolGroup schoolGroup) {
         //discipline.setSchoolGroups(discipline.getSchoolGroups());
         //discipline.setSchoolGroups(schoolGroups);
-        disciplineService.save(discipline);
+//        disciplineService.save(discipline);
+        System.out.println(discipline.getSchoolGroups());
         return "redirect:/alldisciplines";
     }
 
