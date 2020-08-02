@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <select multiple id="school_groups" th:field="*{schoolGroups}" placeholder="selecteaza grupa">
-                        <option th:each="sc: ${schoolgroups}" th:value="${sc}"
+                        <option th:each="sc: ${schoolgroups}" th:value="${sc.groupId}"
                                 th:text="${sc.groupName + ' ' + sc.groupYear}">
                         </option>
                     </select>

@@ -22,5 +22,5 @@ public class DisciplineDTO {
     private List<Student> students;
 
 
-    private SchoolGroup[] schoolGroups;
+    private String[] schoolGroups;
 }
