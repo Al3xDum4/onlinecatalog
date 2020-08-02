@@ -26,5 +26,5 @@ public class Discipline {
 
     @ManyToMany(mappedBy = "disciplines")
     @JsonIgnore
-    private List<SchoolGroup> schoolGroups;
+    private SchoolGroup[] schoolGroups;
 }
