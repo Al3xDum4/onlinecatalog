@@ -23,4 +23,5 @@ public class DisciplineDTO {
 
 
     private String[] schoolGroups;
+
 }

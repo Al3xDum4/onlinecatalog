@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -40,7 +42,13 @@ public class DisciplineController {
         //discipline.setSchoolGroups(discipline.getSchoolGroups());
         //discipline.setSchoolGroups(schoolGroups);
 //        disciplineService.save(discipline);
-        System.out.println(discipline.getSchoolGroups());
+        Discipline discipline1 = new Discipline();
+        List<Discipline> list = new ArrayList<>();
+        discipline1.setDisciplineName(discipline.getDisciplineName());
+        for (int i = 0; i < discipline.getSchoolGroups().length; i++) {
+
+        }
+        System.out.println(Arrays.toString(discipline.getSchoolGroups()));
         return "redirect:/alldisciplines";
     }
 
