@@ -47,9 +47,11 @@ public class DisciplineController {
         discipline1.setDisciplineName(discipline.getDisciplineName());
         for (int i = 0; i < discipline.getSchoolGroups().length; i++) {
             int a = Integer.parseInt(discipline.getSchoolGroups()[i]);
+            System.out.println("Id" + a);
             SchoolGroup schoolGroup1 = schoolGroupService.findById(a);
             if (!(schoolGroup1 == null)) {
                 list.add(schoolGroup1);
+                System.out.println(schoolGroup1.getGroupName());
             }
         }
         discipline1.setSchoolGroups(list);
