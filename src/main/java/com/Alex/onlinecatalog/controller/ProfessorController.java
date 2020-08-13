@@ -37,6 +37,7 @@ public class ProfessorController {
     @GetMapping("/addprofessor")
     public String addProfessor(Model model) {
         model.addAttribute("schoolgroups", schoolGroupService.findAll());
+        model.addAttribute("disciplines", disciplineService.findAll());
         model.addAttribute("professor", new Professor()); // initial bind with the form, to say to the webpage what is the type of student th:object
         return "professor/addprofessor";
     }

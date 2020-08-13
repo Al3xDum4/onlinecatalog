@@ -37,6 +37,15 @@
                     <input th:field="*{lastName}" id="last_name" type="text" placeholder="Last Name" required>
                 </div>
             </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="discipline" th:field="*{disciplines.disciplineName}">
+                        <option th:each="ds: ${disciplines}" th:value="${ds.disciplineName}"
+                                th:text="${ds.disciplineName}"></option>
+                    </select>
+                    <label for="discipline"><b>Discipline</b></label>
+                </div>
+            </div>
             <button type="submit">Add</button>
         </div>
     </form>

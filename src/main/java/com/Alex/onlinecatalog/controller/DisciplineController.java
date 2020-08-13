@@ -43,12 +43,10 @@ public class DisciplineController {
         //discipline.setSchoolGroups(schoolGroups);
 //        disciplineService.save(discipline);
         Discipline discipline1 = new Discipline();
-        List<SchoolGroup> list = new ArrayList<>();
         discipline1.setDisciplineName(discipline.getDisciplineName());
         disciplineService.save(discipline1);
         for (int i = 0; i < discipline.getSchoolGroups().length; i++) {
             int a = Integer.parseInt(discipline.getSchoolGroups()[i]);
-            System.out.println("Id" + a);
             SchoolGroup schoolGroup1 = schoolGroupService.findById(a);
             if (!(schoolGroup1 == null)) {
                 schoolGroup1.getDisciplines().add(discipline1);
@@ -56,7 +54,6 @@ public class DisciplineController {
                 System.out.println(schoolGroup1.getGroupName());
             }
         }
-        System.out.println(Arrays.toString(discipline.getSchoolGroups()));
         return "redirect:/alldisciplines";
     }
 
