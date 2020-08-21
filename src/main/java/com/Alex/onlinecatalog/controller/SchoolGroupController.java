@@ -81,9 +81,9 @@ public class SchoolGroupController {
         return "schoolgroup/viewdisciplines";
     }
 
-    @GetMapping("/group/{id}/professors")
-    public String viewProfessorsInGroup(Model model, @PathVariable Integer id) {
-        model.addAttribute("disciplines", schoolGroupService.findAllProfessorsByGroup(id));
-        return "schoolgroup/viewprofessors";
-    }
+//    @GetMapping("/group/{id}/professors")
+//    public String viewProfessorsInGroup(Model model, @PathVariable Integer id) {
+//        model.addAttribute("disciplines", schoolGroupService.findAllProfessorsByGroup(id));
+//        return "schoolgroup/viewprofessors";
+//    }
 }
