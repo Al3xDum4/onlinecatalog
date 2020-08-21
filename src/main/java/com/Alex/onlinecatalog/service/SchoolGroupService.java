@@ -48,7 +48,7 @@ public class SchoolGroupService {
         return schoolGroupRepository.findById(id).get().getDisciplines();
     }
 
-    public List<Professor> findAllProfessorsByGroup(Integer id){
-        return schoolGroupRepository.findAllProfessorsByGroup(id);
-    }
+//    public List<Professor> findAllProfessorsByGroup(Integer id){
+//        return schoolGroupRepository.findAllProfessorsByGroup(id);
+//    }
 }
