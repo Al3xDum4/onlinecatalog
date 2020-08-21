@@ -18,6 +18,6 @@ public interface SchoolGroupRepository extends JpaRepository<SchoolGroup, Intege
 //    @Query("FROM SchoolGroup s where s.professor.id = :professorId")
 //    Optional<SchoolGroup> findAllProfessorsByGroup(@Param("professorId") Integer professorId);
 
-    @Query("SELECT p FROM Professor p where p.discipline.disciplineName = :groupId")
+    @Query("SELECT s, p FROM SchoolGroup s, Professor p WHERE s.professor.professorId = p.professorId")
     List<Professor> findAllProfessorsByGroup(@Param("groupId") Integer groupId);
 }
