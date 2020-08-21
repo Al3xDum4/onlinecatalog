@@ -7,6 +7,8 @@ import com.Alex.onlinecatalog.model.Student;
 import com.Alex.onlinecatalog.repository.ProfessorRepository;
 import com.Alex.onlinecatalog.repository.SchoolGroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -46,7 +48,7 @@ public class SchoolGroupService {
         return schoolGroupRepository.findById(id).get().getDisciplines();
     }
 
-//    public List<Professor> findAllProfessorsByGroup(Integer id) {
-//        return schoolGroupRepository.findById(id).get().getDisciplines();
-//    }
+    public List<Professor> findAllProfessorsByGroup(Integer id){
+        return schoolGroupRepository.findAllProfessorsByGroup(id);
+    }
 }

@@ -35,7 +35,4 @@ public class ProfessorService {
         professorRepository.deleteById(id);
     }
 
-//    public List<Professor> findAllProfessorsById{
-////        return professorRepository.findAllProfesso
-////    }
 }
