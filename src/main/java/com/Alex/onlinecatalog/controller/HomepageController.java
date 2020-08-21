@@ -37,10 +37,10 @@ public class HomepageController {
         return "schoolgroup/viewdisciplines";
     }
 
-//    @GetMapping("/home/group/{id}/professors")
-//    public String viewHomeProfessorsInGroup(Model model, @PathVariable Integer id) {
-//        model.addAttribute("professors", schoolGroupService.f(id));
-//        return "schoolgroup/viewprofessors";
-//    }
+    @GetMapping("/home/group/{id}/professors")
+    public String viewHomeProfessorsInGroup(Model model, @PathVariable Integer id) {
+        model.addAttribute("professors", schoolGroupService.findAllProfessorsByGroup(id));
+        return "schoolgroup/viewprofessors";
+    }
 
 }
