@@ -42,6 +42,7 @@ public class SecurityConfig {
                     .authorizeRequests()
                     //do not allow anything else
                     .antMatchers("/api/login").permitAll()
+                    .antMatchers("/api/students").permitAll()
                     .anyRequest().authenticated();
 
             http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

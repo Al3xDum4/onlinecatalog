@@ -12,12 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SchoolGroupRepository extends JpaRepository<SchoolGroup, Integer> {
-//    @Query("FROM SchoolGroup s where s.discipline.id = :firstName")
-//    Optional<SchoolGroup> findAllBy(@Param("username") String username);
 
-//    @Query("FROM SchoolGroup s where s.professor.id = :professorId")
-//    Optional<SchoolGroup> findAllProfessorsByGroup(@Param("professorId") Integer professorId);
-
-//    @Query("SELECT s, p FROM SchoolGroup s, Professor p WHERE s.professor.professorId = p.professorId")
+//    @Query("SELECT s FROM SchoolGroup s JOIN FETCH s.professors")
 //    List<Professor> findAllProfessorsByGroup(@Param("groupId") Integer groupId);
+    
 }
